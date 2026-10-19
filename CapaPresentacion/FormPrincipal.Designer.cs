@@ -119,7 +119,7 @@
             this.btnControlAcceso.Name = "btnControlAcceso";
             this.btnControlAcceso.Size = new System.Drawing.Size(120, 70);
             this.btnControlAcceso.TabIndex = 83;
-            this.btnControlAcceso.Text = "Control Acceso N° 4";
+            this.btnControlAcceso.Text = "Control de Acceso";
             this.btnControlAcceso.UseVisualStyleBackColor = false;
             this.btnControlAcceso.Click += new System.EventHandler(this.btnControlAcceso_Click);
             // 
@@ -469,7 +469,7 @@
             this.MaximizeBox = false;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CONTROL ACCESO 4";
+            this.Text = "CONTROL ACCESO EN MESA DE CONTROL";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
