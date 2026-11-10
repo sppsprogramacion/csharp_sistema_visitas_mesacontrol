@@ -544,7 +544,8 @@ namespace CapaPresentacion
                         return;
                     }
 
-                    //REPETIR DOS VECES LA BUSQUEDAEN LISTA DE IDS DE ENTRADA, LA SEGUNDA ES PARA SINCRONIZAR
+                    //REPETIR DOS VECES LA BUSQUEDAEN LISTA DE IDS DE ENTRADA,
+                    //LA SEGUNDA ES PARA SINCRONIZAR
                     int cantidadVeces = 1;
                     while (cantidadVeces <= 2)
                     {
@@ -612,7 +613,7 @@ namespace CapaPresentacion
                     }
 
                     //CUANDO NO ENCUENTRA EN LA LISTA DE HUELLAS DE INGRESOS DEL DIA
-                    //BUSCA EN TODAS LAS HUELLAS
+                    //BUSCA EN TODAS LAS HUELLAS PARA DETERMINAR LA IDENTIDAD DEL VISITANTE
 
                     //LISTA DE TODAS LAS HUELLAS DE LA BASE LOCAL. SOLAMENTE CON LOS IDS DE ENTRADA SALIDA DEL DIA
                     List<DHuellaLocal> listaHuellasTodas = sqlite.ObtenerTodasLasHuellas();
@@ -635,6 +636,7 @@ namespace CapaPresentacion
 
                                 if (fingerprintVerifier.Verify(featureSet, template))
                                 {
+                                    //CUANDO SE ENCUENTRA LA HUELLA
                                     FormHuellasEncontrado formhuellasencontrado = new FormHuellasEncontrado(huella.ciudadano_id);
                                     formhuellasencontrado.ShowDialog();
 
@@ -649,8 +651,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    //MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Sistema Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //Cuando no se enocntro la huella
+                    //CUANDO NO SE ENCONTRO LA HUELLA
                     EjecutarEnUI(() =>
                     {
                         FormHuellaNoEncontrada formHuellaNoEncontrado = new FormHuellaNoEncontrada();
